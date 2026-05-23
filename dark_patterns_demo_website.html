@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Patterns vs Ethical Design - CSCI 452 Project</title>
+  <!-- Google Search / SEO Meta Tags -->
+  <meta name="description" content="An interactive web dashboard comparing common deceptive dark patterns with ethical UI alternatives. Developed as a CSCI 452 topics study.">
+  <link rel="stylesheet" href="dark_patterns.css">
+</head>
+<body>
+
+  <!-- Screen Reader Title for Accessibility -->
+  <h1 class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">
+    Dark Patterns Interactive Demo - CSCI 452 Topics in Computer Science
+  </h1>
+
+  <!-- Academic Header & Project Metadata -->
+  <header class="app-header">
+    <div class="header-title-container">
+      <h1>Dark Patterns Explorer</h1>
+      <p>An interactive side-by-side showcase of deceptive user interfaces vs. transparent ethical alternatives.</p>
+    </div>
+    <div class="meta-badge-grid">
+      <div class="meta-badge">
+        <span class="dot-pulse"></span>
+        <span>Course: <strong>CSCI 452 – Topics in Computer Science</strong></span>
+      </div>
+      <div class="meta-badge">
+        <span>LIU Project by: <strong>Y. Kahwaji & M. Al Dirani</strong></span>
+      </div>
+      <div class="meta-badge">
+        <span>Advisor: <strong>Adelle Abdallah</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Core Dashboard Application Layout -->
+  <main class="app-container">
+    
+    <!-- Left Navigation: Pattern Toggle Sidebar -->
+    <aside class="sidebar">
+      <h3 class="sidebar-title">Select Dark Pattern</h3>
+      <nav class="pattern-nav-list" id="nav-list" aria-label="Dark pattern categories">
+        <!-- JS will populate the 10 patterns here dynamically -->
+      </nav>
+    </aside>
+
+    <!-- Right Content Panel: Dynamic Comparison Display -->
+    <section class="display-area" aria-live="polite">
+      
+      <!-- Current Pattern Description Header -->
+      <div style="padding-left: 0.5rem;">
+        <h2 id="pattern-title-label" style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.25rem;">Pattern Title</h2>
+        <p id="pattern-tagline" style="font-size: 0.9rem; color: var(--text-secondary);">Pattern subtitle details</p>
+      </div>
+
+      <!-- Comparison Mockup Grid -->
+      <div class="comparison-grid">
+        
+        <!-- Deceptive UI Mockup Window -->
+        <div class="browser-mockup dark-variant">
+          <div class="browser-header">
+            <div class="browser-dots">
+              <span class="browser-dot dot-red"></span>
+              <span class="browser-dot dot-yellow"></span>
+              <span class="browser-dot dot-green"></span>
+            </div>
+            <div class="browser-address-bar" id="dark-addr">
+              <span class="lock">🔒</span> deceptive-store.com/checkout
+            </div>
+            <span class="browser-badge danger">Deceptive Design</span>
+          </div>
+          <div class="browser-content" id="dark-mockup-inner">
+            <!-- Dynamic HTML loaded via JS -->
+          </div>
+        </div>
+
+        <!-- Ethical UI Mockup Window -->
+        <div class="browser-mockup clean-variant">
+          <div class="browser-header">
+            <div class="browser-dots">
+              <span class="browser-dot dot-red"></span>
+              <span class="browser-dot dot-yellow"></span>
+              <span class="browser-dot dot-green"></span>
+            </div>
+            <div class="browser-address-bar" id="clean-addr">
+              <span class="lock">🔒</span> transparent-store.com/checkout
+            </div>
+            <span class="browser-badge success">Ethical Design</span>
+          </div>
+          <div class="browser-content" id="clean-mockup-inner">
+            <!-- Dynamic HTML loaded via JS -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Explanations and Cognitive Framework Tabled Information -->
+      <div class="explain-card">
+        
+        <!-- Deceptive Behavior Details -->
+        <div class="explain-section dark-explain">
+          <h4>⚠ Manipulative Logic</h4>
+          <p id="explain-dark-text">What's wrong description goes here...</p>
+        </div>
+
+        <!-- Ethical Behavior Details -->
+        <div class="explain-section clean-explain">
+          <h4>✔ Transparent Design</h4>
+          <p id="explain-clean-text">What's right description goes here...</p>
+        </div>
+
+        <!-- Psychological Explanations (Full Width Banner) -->
+        <div class="mechanism-banner">
+          <div class="mechanism-title">
+            🧠 Psychological Mechanism
+            <span class="badge" id="mechanism-name">Default Effect</span>
+          </div>
+          <p class="mechanism-desc" id="mechanism-desc">Cognitive mechanism details go here...</p>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Dashboard Footer -->
+  <footer class="app-footer">
+    <p>Lebanese International University (LIU) • Department of Computer Science • Spring 2025 – 2026</p>
+  </footer>
+
+  <!-- Dynamic Logic JavaScript Controller -->
+  <script src="dark_patterns.js"></script>
+</body>
+</html>
